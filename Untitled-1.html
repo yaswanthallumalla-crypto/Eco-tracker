@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Irrigation Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="dashboard-header">
+        <h1>Smart Farm Dashboard</h1>
+        <p>Real-time monitoring and control of your irrigation system.</p>
+    </header>
+
+    <main class="dashboard-container">
+        
+        <section class="card status-card">
+            <h2><i class="fas fa-seedling"></i> System Status</h2>
+            <div class="status-indicators">
+                <div class="status-item">
+                    <span id="system-status-text" class="status-text"></span>
+                </div>
+            </div>
+            <p>Last Updated: <span id="last-updated">--:--</span></p>
+        </section>
+
+        <section class="card sensor-data-card">
+            <h2><i class="fas fa-chart-line"></i> Sensor Data</h2>
+            <div class="sensor-grid">
+                <div class="sensor-item">
+                    <i class="fas fa-tint"></i>
+                    <h3>Soil Moisture</h3>
+                    <div class="sensor-value">
+                        <span id="moisture-value">--</span>%
+                    </div>
+                </div>
+                <div class="sensor-item">
+                    <i class="fas fa-thermometer-half"></i>
+                    <h3>Temperature</h3>
+                    <div class="sensor-value">
+                        <span id="temp-value">--</span>°C
+                    </div>
+                </div>
+                <div class="sensor-item">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Humidity</h3>
+                    <div class="sensor-value">
+                        <span id="humidity-value">--</span>%
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card control-panel-card">
+            <h2><i class="fas fa-cog"></i> Control Panel</h2>
+            <div class="control-grid">
+                <div class="control-item mode-toggle">
+                    <h3>Mode</h3>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="mode-toggle-switch">
+                        <label for="mode-toggle-switch" class="slider"></label>
+                    </div>
+                    <span id="mode-label">Automatic</span>
+                </div>
+                
+                <div class="control-item valve-control">
+                    <h3>Valve 1</h3>
+                    <button class="valve-button" id="valve1-on">ON</button>
+                    <button class="valve-button off" id="valve1-off">OFF</button>
+                </div>
+
+                <div class="control-item valve-control">
+                    <h3>Valve 2</h3>
+                    <button class="valve-button" id="valve2-on">ON</button>
+                    <button class="valve-button off" id="valve2-off">OFF</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="card schedule-card">
+            <h2><i class="fas fa-clock"></i> Schedule</h2>
+            <p>Future features will allow you to set custom irrigation schedules here.</p>
+            <button class="action-button" disabled>Set Schedule</button>
+        </section>
+
+    </main>
+
+    <footer class="dashboard-footer">
+        <p>&copy; 2023 Smart Irrigation Solutions</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+}
+
+/* Responsive Grid for larger screens */
+@media (min-width: 768px) {
+    .dashboard-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .sensor-data-card, .control-panel-card {
+        grid-column: span 1;
+    }
+    .status-card, .schedule-card {
+        grid-column: span 2;
+    }
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Status Card Styling */
+.status-card h2 {
+    color: #4CAF50;
+}
+
+.status-indicators {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.status-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #888;
+}
+
+.status-online {
+    color: #4CAF50;
+}
+
+.status-offline {
+    color: #f44336;
+}
+
+/* Sensor Data Card Styling */
+.sensor-data-card .sensor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.sensor-item {
+    border: 1px solid #eee;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.sensor-item i {
+    font-size: 2.5rem;
+    color: #2196F3;
+    margin-bottom: 0.5rem;
+}
+
+.sensor-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #444;
+}
+
+/* Control Panel Styling */
+.control-panel-card .control-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.control-item {
+    text-align: center;
+}
+
+.valve-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+.valve-button:hover {
+    background-color: #45a049;
+}
+
+.valve-button.off {
+    background-color: #f44336;
+}
+
+.valve-button.off:hover {
+    background-color: #d32f2f;
+}
+
+/* Toggle Switch Styling */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.dashboard-footer {
+    text-align: center;
+    padding: 1rem;
+    color: #777;
+    margin-top: 2rem;
+}
